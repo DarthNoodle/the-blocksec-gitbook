@@ -52,6 +52,12 @@
     - #Wallet Security
     - #Social Engineering
 
+## Setup Testing Environment
+- #What Are you Trying To Achieve?
+    - #Smart Contract / Web3
+    - #Node/Validator
+- #Setting Up A Testnet
+
 ## Useful Resources
 - #Blogs
 - #Podcasts
