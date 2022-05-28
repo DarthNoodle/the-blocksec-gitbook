@@ -8,6 +8,8 @@
 ## Attack Surface
 - [Network](attack-surface/network/Readme.md)
     - [Domain Network Services (DNS)](attack-surface/network/DNS.md)
+        - [Attacks](attack-surface/network/DNS_Attack.md)
+        - [Defence](attack-surface/network/DNS_Defence.md)
     - #Distributed Denial of Service (DDOS)
     - #Peer-2-Peer (P2P)
     - #User/Application (JSON-RPC)
