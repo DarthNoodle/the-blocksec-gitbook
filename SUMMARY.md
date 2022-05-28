@@ -6,7 +6,7 @@
     - [Acknowledgements](appendices/acknowledgements.md)
 
 ## Attack Surface
-- #Network
+- [Network](attack-surface/network/Readme.md)
     - #Domain Network Services (DNS)
     - #Distributed Denial of Service (DDOS)
     - #Peer-2-Peer (P2P)
@@ -35,7 +35,7 @@
         - #Handling of Key Material
 - #Consensus
     - #51% Attack
-    - #Block Witholding
+    - #Block Withholding
     - #Sybil
     - #Stale/Orphaned Blocks
     - #Forks
