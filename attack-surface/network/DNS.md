@@ -3,11 +3,11 @@
 1. [DNS Overview](#DNS_Overview)
 2. [DNS Seed Nodes](#DNS_SeedNodes)
 3. [Attack Vectors](#DNS_Attks)
-    3.1. [No Authentication](#DNS_Attks_NoAuth)
-    3.2. [DNS Hijacking/Spoofing](#DNS_Attks_Spoofing)
-    3.3. [Data Corruption](#DNS_Attks_Corrupt)
-    3.4. [Old/Stale Node IPs](#DNS_Attks_OldStale)
-    3.5. [Lack of Standards/Controls](#DNS_Attks_Standards)
+    - [No Authentication](#DNS_Attks_NoAuth)
+    - [DNS Hijacking/Spoofing](#DNS_Attks_Spoofing)
+    - [Data Corruption](#DNS_Attks_Corrupt)
+    - [Old/Stale Node IPs](#DNS_Attks_OldStale)
+    - [Lack of Standards/Controls](#DNS_Attks_Standards)
 4. [Defences](#DNS_Attks_Standards)
 
 <a name="DNS_Overview"></a>
