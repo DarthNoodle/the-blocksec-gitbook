@@ -45,7 +45,7 @@ Due to the lack of authentication and encryption/PKI the protocol is susceptible
 This would permit the attacker to redirect the client to their own malicious nodes; allowing the attacker to feed malicious information about both the blockchain and network state to the client.  This could lead to other attack vectors, such as the `Sybil` attack **(## LINK to Sybil MD ##)**.
 
 #### Data Corruption
-Data corruption is a very real possibility which could have an adverse affect on the client, depending on how error handling and data verification is implemented.  This could lead to either a Denial of Service (DOS) or other possible attack vectors such as remote code execution.
+Data corruption from a malicious or corrupt node is a very real possibility that could have an adverse affect on the connecting client.  Depending on how error handling and data verification is implemented, this could lead to either a Denial of Service (DOS) or other possible attack vectors such as remote code execution.
 
 #### Old/Stale Node IPs
 DNS Seed nodes in general should dynamically update their connected node list [^2], however some owners maintain a static list.  As such, this list could become old/stale where nodes are no longer available/accessible on those IP addresses.
