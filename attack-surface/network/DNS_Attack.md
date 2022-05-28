@@ -1,7 +1,5 @@
 
-<a id="DNS_Attks"></a>
-# DNS Attack Vectors
-### Table of Contents
+## Table of Contents
 - [No Authentication](#DNS_Attks_NoAuth)
 - [DNS Hijacking/Spoofing](#DNS_Attks_Spoofing)
 - [Data Corruption](#DNS_Attks_Corrupt)

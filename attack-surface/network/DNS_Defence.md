@@ -1,8 +1,5 @@
 
-<a id="DNS_Defenses"></a>
-# Controls  / Defence
-
-### Table of Contents
+## Table of Contents
 - [Specify Trusted Systems](#DNS_Defenses_Trust)
     - [Verify, Verify, Verify](#DNS_Defenses_Trust_verify)
     - [Engage with Project Community](#DNS_Defenses_Comm)
