@@ -5,7 +5,6 @@
     + [Start-up Sequences](#DDOS_ATTK_Startup)
     + [Number of Application Interfaces (e.g. JSON-RPC)](#DDOS_ATTK_AppInt)
     + [Governance/Management of Critical Resources](#DDOS_ATTK_Govern)
-        + [Disruption of Project Admins](#DDOS_ATTK_Govern_admin)
         + [Distribution of Tokens](#DDOS_ATTK_Govern_dist)
         + [Disruption of Voting Processes](#DDOS_ATTK_Govern_vote)
         + [Disruption of Project Admins](#DDOS_ATTK_Govern_admin)
