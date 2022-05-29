@@ -60,11 +60,13 @@ Management of the blockchain environment is a critical component and must be pro
 Most protocols start life being centrally governed by the project team, once the project has matured to a certain level it is common for a governance token to be used to then control how the project/protocol grows.  This is generally done through ownership of tokens and utilising said tokens to vote on proposals [^5]. As such, attackers constantly probe this area for weaknesses.
 
 **Distribution of Tokens**
+
 Should the distribution of tokens be heavily skewed/slanted to a particular group or malicious actor; it would be possible for this malicious actor to change how the ecosystem governs.  This could have disastrous consequences for both the integrity and security posture of the network.
 
 An example is the recent Luna SNAFU [^6] where the price of LUNA dropped 99%. It could of been possible for a well-funded malicious attacker to obtain more than 50% of the tokens and as such take control of the network.  The result, the network was stopped.
 
 **Disruption of Voting Processes**
+
 Communities will generally vote on new proposals that could affect the operation or tokenomics of a project.  It could be possible for attackers to disrupt the process in which users would be able to vote; making the process ineffective.
 
 This could be performed in a number of ways:
@@ -73,6 +75,7 @@ This could be performed in a number of ways:
 + Network Congestion (Flood Network)
 
 **Disruption of Project Admins**
+
 The project team, especially in the early days are critical to the operation of a blockchain network.  Attackers could attempt to disrupt how the project team, communicate and manage their blockchain environment.  This would lead to a dramatic reduction to response times should an malicious/security incident occur.
 
 Such disruptions could include:
@@ -103,13 +106,16 @@ The consensus mechanism is one of if not the most important component of a block
 Attackers could attempt to target the blockchain consensus in a number of differing ways, these would include:
 
 **Injection of False/Incorrect Blocks**
+
 It could be possible for an attacker to inject false blocks that may appear valid to the consensus, however the ultimate goal would be to fork the chain in order to perform attacks such as `Long Range` or `Double Spending`. **(## LINK TO MD's ##)**
 
 
 **Delay or Increase The Introduction of Blocks**
+
 An attacker could choose to delay or increase block production, in order to affect consensus settings such as mining difficulty.  In both scenarios, investigating, rejecting and re-organising blocks can be time consuming.  As such, this can be exploited by attackers to affect time-sensitive systems and/or game the system itself (e.g. increase mining difficulty so other miners move onto other projects)
 
 **Target Voting/Consensus Threshold**
+
 Most blockchains implement a form of either a Craft Fault Tolerance (CFT) or Byzantine Fault Tolerance (BFT) consensus mechanism [^4].
 
 
