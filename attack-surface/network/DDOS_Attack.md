@@ -31,8 +31,10 @@ Such parts would be:
 Anywhere that has a potential `bottleneck` or `centralisation` in either the process/system/architecture/people can result in a possible Denial of Service (DoS).  Defenders have to identify and map out all possible attack vectors, an attacker only needs to identify one.
 
 <a id="DDOS_ATTK"></a>
+
 ## DDOS Attack Vectors
 <a id="DDOS_ATTK_BlockProd"></a>
+
 ### Block Producing Systems
 Block producing systems whether they are miners, validators or order's (HyperLedger) provide a vital role in the blockchain ecosystem.  Without these resources, no new blocks would be produced and as such the network would come to a stop.
 
@@ -45,6 +47,7 @@ Some possible attack scenarios would include:
 + Sending Large Volume of Transactions
 
 <a id="DDOS_ATTK_Startup"></a>
+
 ### Start-up Sequences
 When Nodes/Validators initially start-up they have little to no knowledge of the network [^1].  They will attempt to obtain this knowledge from two places:
 
@@ -60,6 +63,7 @@ An example of which is to perform Man-in-The-Middle (MiTM) based attacks [^2] in
 Should the node not obtain any information upon start-up then it would not be able to connect to the network and function as intended.
 
 <a id="DDOS_ATTK_AppInt"></a>
+
 ### Application Interfaces
 An application interface can be defined as `a service that permits interaction with external users or code`, this means interfaces such as:
 
@@ -71,6 +75,7 @@ An application interface can be defined as `a service that permits interaction w
 Each of the above listed services run on differing protocols and will have their own nuances with regards to crafting of malicious data/packets.  However, all are susceptible to the  application and network level DoS attack methodologies.
 
 <a id="DDOS_ATTK_Govern"></a>
+
 ### Governance/Management of Critical Resources
 Management of the blockchain environment is a critical component and must be protected in order for the blockchain to function.  
 
@@ -105,6 +110,7 @@ Such disruptions could include:
 + Revoke or Lockout Access/Certificates/Credentials
 
 <a id="DDOS_ATTK_TX"></a>
+
 ### Transaction Throughput
 Blockchain ecosystems tend to use Transactions Per Second (TPS) as a benchmark; this is due to most systems having a capacity/limit on how quickly blocks can be produced and how many transactions can fit inside a single block.
 
@@ -120,6 +126,7 @@ There could be other consequences of these attacks, such as:
 
 
 <a id="DDOS_ATTK_Cons"></a>
+
 ### Consensus Delay
 The consensus mechanism is one of if not the most important component of a blockchain ecosystem.  This mechanism enforces data integrity and aids in determining the security, scalability and speed of transactions on the network [^4].
 
