@@ -1,19 +1,21 @@
 ## Table of Contents
-+ [Number of Block Producing Systems (e.g. Validators)](#DDOS_ATTK_BlockProd)
-+ [Start-up Sequences](#DDOS_ATTK_Startup)
-+ [Number of Application Interfaces (e.g. JSON-RPC)](#DDOS_ATTK_AppInt)
-+ [Governance/Management of Critical Resources](#DDOS_ATTK_Govern)
-    + [Disruption of Project Admins](#DDOS_ATTK_Govern_admin)
-    + [Distribution of Tokens](#DDOS_ATTK_Govern_dist)
-    + [Disruption of Voting Processes](#DDOS_ATTK_Govern_vote)
-    + [Disruption of Project Admins](#DDOS_ATTK_Govern_admin)
-+ [Transaction Throughput](#DDOS_ATTK_TX)
-+ [Consensus Delay](#DDOS_ATTK_Cons)
-    + [Injection of False/Incorrect Blocks](#DDOS_ATTK_Cons_fblock)
-    + [Delay or Increase The Introduction of Blocks](#DDOS_ATTK_Cons_blockdelay)
-    + [Target Voting/Consensus Threshold](#DDOS_ATTK_Cons_voting)
++ [Are Blockchains DDoS Resistant?](#DDOS_ATTK_Resist)
++ [DDOS Attack Vectors](#DDOS_ATTK)
+    + [Number of Block Producing Systems (e.g. Validators)](#DDOS_ATTK_BlockProd)
+    + [Start-up Sequences](#DDOS_ATTK_Startup)
+    + [Number of Application Interfaces (e.g. JSON-RPC)](#DDOS_ATTK_AppInt)
+    + [Governance/Management of Critical Resources](#DDOS_ATTK_Govern)
+        + [Disruption of Project Admins](#DDOS_ATTK_Govern_admin)
+        + [Distribution of Tokens](#DDOS_ATTK_Govern_dist)
+        + [Disruption of Voting Processes](#DDOS_ATTK_Govern_vote)
+        + [Disruption of Project Admins](#DDOS_ATTK_Govern_admin)
+    + [Transaction Throughput](#DDOS_ATTK_TX)
+    + [Consensus Delay](#DDOS_ATTK_Cons)
+        + [Injection of False/Incorrect Blocks](#DDOS_ATTK_Cons_fblock)
+        + [Delay or Increase The Introduction of Blocks](#DDOS_ATTK_Cons_blockdelay)
+        + [Target Voting/Consensus Threshold](#DDOS_ATTK_Cons_voting)
 
-
+<a id="DDOS_ATTK_Resist"></a>
 ## Are Blockchains DDoS Resistant?
 The short answer: **NO**
 
@@ -29,7 +31,7 @@ Such parts would be:
 
 Anywhere that has a potential `bottleneck` or `centralisation` in either the process/system/architecture/people can result in a possible Denial of Service (DoS).  Defenders have to identify and map out all possible attack vectors, an attacker only needs to identify one.
 
-
+<a id="DDOS_ATTK"></a>
 ## DDOS Attack Vectors
 <a id="DDOS_ATTK_BlockProd"></a>
 ### Block Producing Systems
