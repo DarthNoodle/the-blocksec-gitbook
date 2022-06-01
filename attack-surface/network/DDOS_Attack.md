@@ -4,6 +4,7 @@
     + [Number of Block Producing Systems (e.g. Validators)](#DDOS_ATTK_BlockProd)
     + [Start-up Sequences](#DDOS_ATTK_Startup)
     + [Number of Application Interfaces (e.g. JSON-RPC)](#DDOS_ATTK_AppInt)
+    + [Site/Resource Hosting](#DDOS_ATTK_Host)
     + [Governance/Management of Critical Resources](#DDOS_ATTK_Govern)
         + [Distribution of Tokens](#DDOS_ATTK_Govern_dist)
         + [Disruption of Voting Processes](#DDOS_ATTK_Govern_vote)
@@ -73,6 +74,12 @@ An application interface can be defined as `a service that permits interaction w
 + Management (RPC/API Service Used For Remote Admin)
 
 Each of the above listed services run on differing protocols and will have their own nuances with regards to crafting of malicious data/packets.  However, all are susceptible to the  application and network level DoS attack methodologies.
+
+<a id="DDOS_ATTK_Host"></a>
+### Site/Resource Hosting
+Most Web3 enabled applications consist of lightweight clients (e.g. pure, front-end JavaScript framework apps like Angular/React) which talk directly to Web3 RPC services to both query/receive information.  These lightweight applications do not require much resources to deliver content and can be hosted on cheap VPS systems or similar.  
+
+While these applications are light and can be hosted anywhere, they are still delivered through the standard browser (HTTP(s)) and as such are susceptible to all application and network based DoS attacks.  Should the application be taken offline, the underlying functionality on the blockchain would still work but your average user would not be able to efficiently perform their required actions (when compared to performing the same actions on a web page). 
 
 <a id="DDOS_ATTK_Govern"></a>
 
