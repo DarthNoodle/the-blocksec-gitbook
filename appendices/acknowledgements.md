@@ -7,4 +7,4 @@ It would not be possible to list everyone who has helped me on this journey, how
 In no particular order:
 + Window Lickers Anonymous, You couldn't ask for better friends.
 +  [rel0aded](https://www.twitter.com/0xRel0aded), Inspiring me to write this book (his own [Ethereum Ecosystem](https://www.ethexplainer.com/) book) and for constantly challenging me.
-+  [Blockcore Community](https://www.blockcore.net/), I've learnt to much from these talented individuals. They have provided inspiration, ideas and helped with QA.
++  [Blockcore Community](https://www.blockcore.net/), I've learnt so much from this friendly, talented community. They have provided inspiration, ideas and helped with QA.
