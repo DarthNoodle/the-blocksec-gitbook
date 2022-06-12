@@ -18,7 +18,7 @@
         + [Blacklist vs Whitelist](#DDOS_Def_StdMit_RestrictAccess_vs)
     + [CDN](#DDOS_Def_StdMit_CDN)
     + [Load Balancing](#DDOS_Def_StdMit_LoadBalance)
-    + [##Caching](#DDOS_Def_StdMit_Caching)
+    + [Caching](#DDOS_Def_StdMit_Caching)
     + [##DDOS Provider](#DDOS_Def_StdMit_DDOSProvider)
 + [##Monitoring & Alerting](#DDOS_Def_Monitoring)
     + [##Network Traffic](#DDOS_Def_Monitoring_NetworkTraf)
@@ -189,6 +189,13 @@ Consideration should be given to placing LB's in front of critical resources suc
 
 ## Caching
 
+Caching can be performed at many different layers (such as CDN through to Database and Web/API Response) within the technology stack.  So, what is caching exactly?
+
+Querying data from computationally expensive sources can be slow and resource intensive.  Caching attempts to increase the speed/efficiency of these responses by storing frequently accessed data in memory or other high-speed, low latency/resource mediums (such as memory) [^8]. 
+
+Attackers attempting to starve their target of resources would attempt to access computationally expensive resources (e.g. hitting a query API repeatedly).  By caching the response, the underlying resources (such as a Database or Node) wont even be queried; further reducing the attack surface and raising the DOS difficulty bar.
+
+
 <a id="DDOS_Def_StdMit_DDOSProvider"></a>
 ## DDOS Provider
 
@@ -228,3 +235,5 @@ https://cheatsheetseries.owasp.org/cheatsheets/Denial_of_Service_Cheat_Sheet.htm
   https://docs.aws.amazon.com/whitepapers/latest/aws-best-practices-ddos-resiliency/welcome.html
 [^7]: How to avoid getting slashed
   https://www.coinbase.com/cloud/discover/solutions/dont-get-slashed
+[^8]: Caching Overview
+  https://aws.amazon.com/caching/
