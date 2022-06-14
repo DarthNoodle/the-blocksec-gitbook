@@ -4,6 +4,7 @@
     - [Disclaimer](appendices/disclaimer.md)
     - [License](appendices/license.md)
     - [Acknowledgements](appendices/acknowledgements.md)
+    - [Changelog](appendices/changelog.md)
 
 ## Attack Surface
 - [Network](attack-surface/network/Readme.md)
