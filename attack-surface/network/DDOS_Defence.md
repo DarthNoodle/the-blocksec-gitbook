@@ -1,7 +1,7 @@
 # Table of Contents
 + [Blockchain Mitigations](#DDOS_Def_Mit)
-    + [##Topology](#DDOS_Def_Mit_topology)
-        + [##High Availability](#DDOS_Def_Mit_highavail)
+    + [Topology](#DDOS_Def_Mit_topology)
+        + [High Availability](#DDOS_Def_Mit_highavail)
         + [##Hide/Obfuscate Validators](#DDOS_Def_Mit_hidevalidators)
     + [##Communication](#DDOS_Def_comm)
         + [##Project Team](#DDOS_Def_comm_team)
@@ -31,15 +31,27 @@ Attacks such as Denial of Service (DoS) can be very difficult to prevent in its 
 <a id="DDOS_Def_Mit"></a>
 
 # Blockchain Mitigations
+This section focuses on web3 (blockchain-enabled or focused) technologies.
 
 <a id="DDOS_Def_Mit_topology"></a>
 
 ## Topology
+The topology of a network/ecosystem can be critical in ensuring efficient day-to-day operations.  Should there be not enough resiliency designed into the solution; attackers could exploit these weaknesses and possibly impact the availability of core/critical services [^13].  Possibly resulting in users  leaving the project/ecosystem.
 
 <a id="DDOS_Def_Mit_highavail"></a>
 
 ### High Availability
-+ make sure validators
+High Availability (HA) is an operational characteristic where the goal is to ensure a level of operation remains active for higher than normal [^12].  An example would be to ensure the projects Validators are HA, this means the project will attempt to keep them online regardless of what conditions the network is facing.
+
+The goal is to identify single points of failure or areas that could negatively impact the availability of the project.  
+
+Project teams should ask themselves the following questions:
+
++ Where are my critical resources? (e.g. Seed nodes/Validators/JSON-RPC)
++ How Many Instances Are There?
+
+Once potential failure points have been identified, teams could employ standard HA practices.  Entire books have been written on this subject so the author is going to provide some links for the reader to pursue [^14] [^15].
+
 
 <a id="DDOS_Def_Mit_hidevalidators"></a>
 
@@ -48,6 +60,10 @@ Attacks such as Denial of Service (DoS) can be very difficult to prevent in its 
     + cosmos sdk example
 
 <a id="DDOS_Def_comm"></a>
+
+
+### Caching / DOS Providers
+mention running JSON-RPC through there to cache responses?
 
 ## Communication
 
@@ -262,3 +278,11 @@ https://cheatsheetseries.owasp.org/cheatsheets/Denial_of_Service_Cheat_Sheet.htm
   https://www.snort.org/
 [^11]: 5 Items to Monitor to Detect DDoS Attacks
   https://www.nextgov.com/ideas/2021/08/5-items-monitor-detect-ddos-attacks/184874/
+[^12]: Wikipedia: High Availability
+[^13]: A multi-tiered DDoS protection architecture
+  https://www.f5.com/services/resources/white-papers/the-f5-ddos-protection-reference-architecture
+  https://en.wikipedia.org/wiki/High_availability
+[^14]: AWS Well-Architected Framework
+  https://d1.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf
+[^15]: Making the Most of AWS High Availability Architecture for Enterprise Workloads
+  https://cloud.netapp.com/blog/aws-high-availability-architecture
