@@ -19,10 +19,10 @@
     + [CDN](#DDOS_Def_StdMit_CDN)
     + [Load Balancing](#DDOS_Def_StdMit_LoadBalance)
     + [Caching](#DDOS_Def_StdMit_Caching)
-    + [##DDOS Provider](#DDOS_Def_StdMit_DDOSProvider)
-+ [##Monitoring & Alerting](#DDOS_Def_Monitoring)
-    + [##Network Traffic](#DDOS_Def_Monitoring_NetworkTraf)
-    + [##Chain Traffic](#DDOS_Def_Monitoring_ChainTraf)
+    + [DDOS Provider](#DDOS_Def_StdMit_DDOSProvider)
++ [Monitoring & Alerting](#DDOS_Def_Monitoring)
+    + [Network Traffic](#DDOS_Def_Monitoring_NetworkTraf)
+    + [Chain Traffic](#DDOS_Def_Monitoring_ChainTraf)
 
 # Introduction
 Attacks such as Denial of Service (DoS) can be very difficult to prevent in its entirety; in general, these attacks consist of multiple compromised systems which can bring large amounts of traffic to bare with very little cost to themselves.  On the other hand, defending against such attacks can require a significant amount of resources and can prove to be quite costly from both a time (man hours) and monetary perspective.  However,  there are some steps/controls that project teams could take in order to reduce the opportunity and susceptibility for DoS attacks [^6].
@@ -209,19 +209,33 @@ A project team should seriously considering utilising professional DDOS provider
 <a id="DDOS_Def_Monitoring"></a>
 
 # Monitoring & Alerting
+Monitoring for and detecting DOS attacks is crucial to ensuring normal operation of projects. The methods and/or processes used tend to vary depending on the teams level of risk, availability and resources.
+
 
 <a id="DDOS_Def_Monitoring_NetworkTraf"></a>
 
 ## Network Traffic
-+ similar to DNS section
+The majority of web2 (non-blockchain) DOS attacks are network or application based, as such it could be possible to utilise OpenSource tools [^10] to listen and detect for attacks.
+
+Such tools would listen for [^11]:
+
++ TCP/UDP/ICMP Flooding
++ DNS Flooding
++ Application Based (e.g. HTTP)
+
 
 <a id="DDOS_Def_Monitoring_ChainTraf"></a>
 
 ## Chain Traffic
-+ detect conditions such as:
-    + high gas fees
-    + mempool congestion
-    + block times
+
+What about web3 (blockchain-enabled) technologies, while it could be possible to monitor network traffic.  Consideration should be given to investigating what metrics can be obtain from on-chain data; this could provide other indicators of DOS based attacks.
+
+Some possible areas to investigate and monitor would include:
+
++ High GAS Fees
++ High Memory Pool Congestion 
++ Block times deviate from their median (e.g. BTC 1 block every 10 mins).
+
 
 
 
@@ -244,3 +258,7 @@ https://cheatsheetseries.owasp.org/cheatsheets/Denial_of_Service_Cheat_Sheet.htm
   https://aws.amazon.com/caching/
 [^9]: Top 8 DDoS Protection Service Providers for 2022
   https://www.esecurityplanet.com/products/distributed-denial-of-service-ddos-protection-vendors/
+[^10]: Snort IDS
+  https://www.snort.org/
+[^11]: 5 Items to Monitor to Detect DDoS Attacks
+  https://www.nextgov.com/ideas/2021/08/5-items-monitor-detect-ddos-attacks/184874/
