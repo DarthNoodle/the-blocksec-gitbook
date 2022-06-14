@@ -197,7 +197,12 @@ Attackers attempting to starve their target of resources would attempt to access
 
 
 <a id="DDOS_Def_StdMit_DDOSProvider"></a>
+
 ## DDOS Provider
+
+Distributed Denial of Service (DDOS) providers are companies that specialise in providing DOS mitigation services [^9].  Such services would include a wide range of functionality/controls, most of which is outlined in the above sections.
+
+A project team should seriously considering utilising professional DDOS providers for their production environments and/or critical services in order to ensure the maximum amount of availability possible.
 
 
 
@@ -237,3 +242,5 @@ https://cheatsheetseries.owasp.org/cheatsheets/Denial_of_Service_Cheat_Sheet.htm
   https://www.coinbase.com/cloud/discover/solutions/dont-get-slashed
 [^8]: Caching Overview
   https://aws.amazon.com/caching/
+[^9]: Top 8 DDoS Protection Service Providers for 2022
+  https://www.esecurityplanet.com/products/distributed-denial-of-service-ddos-protection-vendors/
