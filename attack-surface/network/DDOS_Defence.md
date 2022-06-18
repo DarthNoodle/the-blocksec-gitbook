@@ -3,9 +3,9 @@
     + [Topology](#DDOS_Def_Mit_topology)
         + [High Availability](#DDOS_Def_Mit_highavail)
         + [##Hide/Obfuscate Validators](#DDOS_Def_Mit_hidevalidators)
-    + [##Communication](#DDOS_Def_comm)
-        + [##Project Team](#DDOS_Def_comm_team)
-        + [##Community](#DDOS_Def_comm_community)
+    + [Communication](#DDOS_Def_comm)
+        + [Project Team](#DDOS_Def_comm_team)
+        + [Community](#DDOS_Def_comm_community)
     + [##Backup Keys](#DDOS_Def_keys)
 + [Standard Mitigations](#DDOS_Def_StdMit)
     + [Rate Limiting](#DDOS_Def_StdMit_RateLimit)
@@ -62,25 +62,40 @@ Once potential failure points have been identified, teams could employ standard 
 <a id="DDOS_Def_comm"></a>
 
 
-### Caching / DOS Providers
-mention running JSON-RPC through there to cache responses?
-
 ## Communication
+Communication is critical when it disruptions occur, if project team members cannot communicate then their ability to coordinate and respond effectively would be greatly hampered. 
+
 
 <a id="DDOS_Def_comm_team"></a>
 
 ### Project Team
-+ OOB Comms (e.g. whatsapp)
+The project team is also a critical component where steps should be taken to ensure multiple lanes of communication are available to each other in the event of an outage/disruption.  
+
+Depending on the level of trust, it is generally recommended that projects have at least one Out of Band (OOB) methods of communication in conjunction to the primary means.
+
+Examples of Primary Methods:
++ Discord Server
++ Telegram Channel 
+
+Examples of Secondary Methods:
++ Direct Messaging Apps (e.g. WhatsApp / Signal)
++ Email
++ Mobile Phone Numbers
+
 
 <a id="DDOS_Def_comm_community"></a>
 
 ### Community
-+ Ensure multiple announcement mediums
-    + Discord
-    + Website
-    + Twitter
-    + Telegram
-    + Network Broadcast
+Should an outage or disruption occur then keeping the community well informed with status updates is also crucial, while the majority of users will be clustered around the primary means of communication (e.g. the project Discord server).  How do you keep them notified if the primary comms go down?
+
+Project teams should consider updating their FAQ (or similar) channels to outline additional sites/sources where information can be found in the event of an outage.  Teams should also consider setting up a playbook (e.g. this is what we do when X happens) in order to ensure this process is as smooth and reactive as possible.
+
+Some examples of additional forms of notification/communication:
++ Project Website
++ Twitter
++ Network Broadcast (similar to BTC Alert [^16])
++ Telegram
+
 
 <a id="DDOS_Def_keys"></a>
 
@@ -286,3 +301,5 @@ https://cheatsheetseries.owasp.org/cheatsheets/Denial_of_Service_Cheat_Sheet.htm
   https://d1.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf
 [^15]: Making the Most of AWS High Availability Architecture for Enterprise Workloads
   https://cloud.netapp.com/blog/aws-high-availability-architecture
+[^16]: Bitcoin Wiki: Alert System
+  https://en.bitcoin.it/wiki/Alert_system
