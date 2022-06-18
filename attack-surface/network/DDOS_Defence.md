@@ -2,11 +2,13 @@
 + [Blockchain Mitigations](#DDOS_Def_Mit)
     + [Topology](#DDOS_Def_Mit_topology)
         + [High Availability](#DDOS_Def_Mit_highavail)
-        + [##Hide/Obfuscate Validators](#DDOS_Def_Mit_hidevalidators)
+        + [Hide/Obfuscate Validators](#DDOS_Def_Mit_hidevalidators)
+          + [TOR/ Onion Network](#DDOS_Def_Mit_hidevalidators_TOR)
+          + [VPN Providers](#DDOS_Def_Mit_hidevalidators_VPN)
+          + [Sentry Nodes](#DDOS_Def_Mit_hidevalidators_Sentry)
     + [Communication](#DDOS_Def_comm)
         + [Project Team](#DDOS_Def_comm_team)
         + [Community](#DDOS_Def_comm_community)
-    + [##Backup Keys](#DDOS_Def_keys)
 + [Standard Mitigations](#DDOS_Def_StdMit)
     + [Rate Limiting](#DDOS_Def_StdMit_RateLimit)
         + [Ingress Data Limit](#DDOS_Def_StdMit_RateLimit_Ingress)
@@ -56,8 +58,33 @@ Once potential failure points have been identified, teams could employ standard 
 <a id="DDOS_Def_Mit_hidevalidators"></a>
 
 ### Hide/Obfuscate Validators
-+ where possible hide validators
-    + cosmos sdk example
+Validators are a critical, block producing resource that should be available/online as close to 100% of the time.  Should enough validators (33% or more) be taken offline/impacted then there is a very real possibility of the affected network not achieving consensus; halting or taking control of the network [^18].
+
+Validators can be identified through simple things such as information leakage from services or even querying the blockchain and enumerating the information from active nodes [^20] [^21].
+
+Some things that could be done to assist in protecting validators:
+
+<a id="DDOS_Def_Mit_hidevalidators_TOR"></a>
+
+#### TOR/ Onion Network
+TOR is an Onion network that is most commonly referred to as "The Darknet", this is an encrypted anonymously routed network where the goal is to browse and access resources anonymously [^19].  It could be possible to host/run a node on this service to provide an additional layer of anonymity/protection.
+
+
+<a id="DDOS_Def_Mit_hidevalidators_VPN"></a>
+
+#### VPN Providers
+Virtual Private Networks (VPN) work on a client-server model where VPN clients are able to connect to a remote VPN endpoint and then tunnel all network traffic (which is encrypted) through the remote endpoint.  This gives the advantage of VPN clients assuming the IP and geographical location of the VPN server. 
+
+Validator and node owners could take advantage of this technology to bypass geographical restrictions or hide their source IP address.
+
+**NOTE:** You may have issues with Network Address Translation (NAT) when attempting to bind ports on external IP's.
+
+<a id="DDOS_Def_Mit_hidevalidators_Sentry"></a>
+
+#### Sentry Nodes
+Should your chain technology support it then there are additional, more supported ways in which to protect your validators.  
+
+Within the COSMOS SDK there are concepts known as "Sentry Nodes", these Nodes act as relayers/routers of network traffic both to and from a validator.  This gives the advantage of providing a protective layer around network validators; reducing their overall attack surface.  There are a number of different ways in which this can be employed, for a good overview of the different compositions, please refer to this link [^22].
 
 <a id="DDOS_Def_comm"></a>
 
@@ -95,21 +122,6 @@ Some examples of additional forms of notification/communication:
 + Twitter
 + Network Broadcast (similar to BTC Alert [^16])
 + Telegram
-
-
-<a id="DDOS_Def_keys"></a>
-
-## Backup Keys
-+ Can easily nuke and spin up another validator
-+ prevents attacks targeting the key storage/retrieval
-
-
-
-
-
-
-
-
 
 
 <a id="DDOS_Def_StdMit"></a>
@@ -303,3 +315,15 @@ https://cheatsheetseries.owasp.org/cheatsheets/Denial_of_Service_Cheat_Sheet.htm
   https://cloud.netapp.com/blog/aws-high-availability-architecture
 [^16]: Bitcoin Wiki: Alert System
   https://en.bitcoin.it/wiki/Alert_system
+[^17]: Intro to Ethereum Staking and Validators
+  https://blockdaemon.com/platform/validator-node/ethereum-introduction/ 
+[^18]: What is Byzantine Fault Tolerance? Quick intro to PBFT for Crypto
+  https://medium.com/geekculture/what-is-byzantine-fault-tolerance-quick-intro-to-pbft-for-crypto-4b54ce70ecde
+[^19]: What Is Tor and Why Should I Use It?
+  https://lifehacker.com/what-is-tor-and-should-i-use-it-1527891029
+[^20]: Running Bitcoin & Lightning Nodes Over The Tor Network (2021 Edition)
+  https://stopanddecrypt.medium.com/running-bitcoin-lightning-nodes-over-the-tor-network-2021-edition-489180297d5
+[^21]: How To Sync an Ethereum Node via Tor
+  https://medium.com/@oaeee/how-to-sync-an-ethereum-node-via-tor-755534775ae1
+[^22]: Playbook For Cosmos Validators: Node Architecture Choices
+  https://medium.com/@kidinamoto/tech-choices-for-cosmos-validators-27c7242061ea
