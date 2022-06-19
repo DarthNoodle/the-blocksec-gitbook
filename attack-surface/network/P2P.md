@@ -31,9 +31,9 @@ Running a node/peer can be costly from a resource (person-hours/CPU/RAM/HDD) per
 Peers within a blockchain network all have a number of specific/critical functions to perform.  These same functions would also be targeted by would-be attackers; attempting to compromise or disrupt the network.
 
 ### Connecting To Peers
-Connecting to peers is one of the most critical aspects of a P2P network;  if your a newly created node, how does that node where to connect and how to obtain information?
+Connecting to peers is one of the most critical aspects of a P2P network;  if your a newly created node, how does that node know where to connect and how to obtain information?
 
-In most instances a node will first attempt to utilise [DNS seed nodes](DNS.md) where a pre-defined list of domains/hosts will be queried.  In a similar fashion, a list of static IP addresses can also be used should the host system not have functioning DNS.
+In most instances a node will first attempt to utilise [DNS seed nodes](DNS.md) where a pre-defined list of domains/hosts will be queried.  In a similar fashion, a list of static IP addresses are hardcoded into the node and can also be used should the host system not have functioning DNS.
 
 It would also be possible to manually specify IP addresses within the node configuration file; this would permit the node to only talk to trusted nodes [^2].
 
