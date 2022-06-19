@@ -33,7 +33,7 @@ Peers within a blockchain network all have a number of specific/critical functio
 ### Connecting To Peers
 Connecting to peers is one of the most critical aspects of a P2P network;  if your a newly created node, how does that node where to connect and how to obtain information?
 
-In most instances a node will first attempt to utilise [DNS seed nodes](attack-surface/network/DNS.md) where a pre-defined list of domains/hosts will be queried.  In a similar fashion, a list of static IP addresses can also be used should the host system not have functioning DNS.
+In most instances a node will first attempt to utilise [DNS seed nodes](DNS.md) where a pre-defined list of domains/hosts will be queried.  In a similar fashion, a list of static IP addresses can also be used should the host system not have functioning DNS.
 
 It would also be possible to manually specify IP addresses within the node configuration file; this would permit the node to only talk to trusted nodes [^2].
 
