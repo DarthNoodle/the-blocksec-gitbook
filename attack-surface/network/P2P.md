@@ -22,9 +22,13 @@ All peers (lets ignore light clients for a moment) on the network will have a co
 ## Purpose
 The most important part of a P2P network is the communication between nodes.  Blockchain data is considered secure because every node (ignoring light clients & sharding for now) on the network should have a copy of data; nodes would have a constant need to communicate with each other in order to keep data/events (such as blocks or new transactions) synchronised across the network.  As such, the distributed network described above seems like the most logical choice [^1].
 
-P2P protocols should also ensure not only the availability of on-chain data but also the availability of nodes on the network.  This means a connecting client should be able to obtain enough information about the network, by just querying a small number of online nodes [^2].
+P2P protocols should also ensure not only the availability of on-chain data but also the availability of nodes on the network.  This means a connecting client should be able to obtain enough information about the network; it can do so by querying only a small number of online nodes [^2].
 
 Running a node/peer can be costly from a resource (person-hours/CPU/RAM/HDD) perspective.  To encourage network participants, each network has introduced incentives for performing these vital network functions.  In the case of cryptocurrency, such incentives would take the form of being awarded an allocation of coins for performing a network function (e.g. such as producing a new block);  this provides economic incentives to further strengthen the network.
+
+## ###Data Security / Consensus
+......ss.s.s.s..s.s.s.
+Maybe provide a very brief writeup and link to the main consensus section elsewhere in the book?
 
 
 ## Functions
@@ -48,16 +52,16 @@ As a newly connecting node it would be possible to query any node on the network
 Once the node has built up sufficient knowledge (e.g. peer list, current block height) it will then start the process of `Initial Block Download` or will sync its current records utilising a similar process.
 
 
-### Initial Block Download (IBD)
+### ###Initial Block Download (IBD)
 
 
 
 
 
-### Broadcasting Blocks
+### ###Broadcasting Blocks
 
 
-### Broadcasting Transactions/Mempool
+### ###Broadcasting Transactions/Mempool
 
 
 
