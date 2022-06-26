@@ -34,7 +34,7 @@ Maybe provide a very brief writeup and link to the main consensus section elsewh
 ## Functions
 Peers within a blockchain network all have a number of specific/critical functions to perform.  These same functions would also be targeted by would-be attackers; attempting to compromise or disrupt the network.
 
-### Connecting To Peers
+### Connecting To Peers (Peer Discovery)
 Connecting to peers is one of the most critical aspects of a P2P network;  if your a newly created node, how does that node know where to connect and how to obtain information?
 
 In most instances a node will first attempt to utilise [DNS seed nodes](DNS.md) where a pre-defined list of domains/hosts will be queried.  In a similar fashion, a list of static IP addresses are hardcoded into the node and can also be used should the host system not have functioning DNS.
@@ -52,10 +52,30 @@ As a newly connecting node it would be possible to query any node on the network
 Once the node has built up sufficient knowledge (e.g. peer list, current block height) it will then start the process of `Initial Block Download` or will sync its current records utilising a similar process.
 
 
-### ###Initial Block Download (IBD)
+### Initial Block Download (IBD)
+After peer discovery has been performed and a number of connections have been established to the network, it is time for the node to start syncronising with the network.  So what does this mean exactly?
+
+In order for the node to verify unconfirmed transactions they require a full copy of the blockchain; this means the node has to establish the height (current block number) of the chain and to then fill in any missing blocks until said node has caught up with the network.  At present there are two ways of performing an IBD, these are outlined below [^2].
+
+**Note:** For specific protocol related messages (such as `Inv`, `GetData`, `GetHeaders`, `Get Blocks`) please refer to this resource for more techincal information [^3].
+
+#### Headers First
+Headers first is the newer and primary method of the two IBD options, since the introduction of `Bitcoin Core v0.10.0`;  the primary goal of this method is to permit fast syncronisation between nodes.
+
+This is achieved by only downloading block headers instead of full blocks, as each header is downloaded, limited validation processes are performed to ensure the header integrity before moving onto the next block header.  Once all headers have been downloaded the node will then start to request full blocks from the network [^1].  The flowchart below illustrates this process:
+
+![IBM Headers First Flowchart](images/ibd.headers.first.flowchart.svg)
+<p align="center">
+*Source: [^1]*
+</p>
 
 
+#### Blocks First
 
+![IBM Headers First Flowchart](images/ibd.blocks.first.flowchart.svg)
+<p align="center">
+*Source: [^1]*
+</p>
 
 
 ### ###Broadcasting Blocks
@@ -70,4 +90,5 @@ Once the node has built up sufficient knowledge (e.g. peer list, current block h
   https://developer.bitcoin.org/devguide/p2p_network.html
 [^2]: Horizen Academy: P2P - peer-to-peer network
   https://academy.horizen.io/technology/advanced/a-peer-to-peer-p2p-network/
-
+[^3]: Bitcoin: Protocol Documentation
+  https://en.bitcoin.it/wiki/Protocol_documentation
