@@ -34,6 +34,22 @@ Maybe provide a very brief writeup and link to the main consensus section elsewh
 ## Functions
 Peers within a blockchain network all have a number of specific/critical functions to perform.  These same functions would also be targeted by would-be attackers; attempting to compromise or disrupt the network.
 
+It should be noted that each respective project might implement their own protocol/functions.  An example of which is Bitcoin [^1] and Ethereum [^8]; they are completely different where the underlying P2P protocol is different and not compatible.  This book has started with high-level Bitcoin because thats the easiest to understand (it will also cover Ethereum topics, this is a WIP). 
+
+How do you work out what protocol the chain is using?
+
+There a number of methods you could employ to find this information, such as:
++ Read white/yellow paper
++ Project technical documentation
++ Join project chat site (e.g. Discord/Telegram)
+  + Find devs and ask nicely
++ Read The Code
++ Google for prior work/research
+
+Should there still be gaps after exhausting the above methods then it may be possible to attempt `Protocol Reverse Engineering` [^9].  The reader should be warned, this is a deeply technical and time consuming process/route.
+
+
+
 ### Connecting To Peers (Peer Discovery)
 Connecting to peers is one of the most critical aspects of a P2P network;  if your a newly created node, how does that node know where to connect and how to obtain information?
 
@@ -70,14 +86,19 @@ The flowchart below illustrates this process [^1]:
 
 
 #### Blocks First
-The blocks first IBD was the first method used by clients to syncronise to the network; this method will attempt to sequentially download all blocks starting from the previous state (e.g. if its a new node, then last stored block would be 0/Empty).  This approach is more simplistic than its `Headers First` counterpart there are actually more scenarios that could negatively impact the node becoming operational.  These will be discussed in more detail in the next [P2P Attack section](./P2P_Attack.md).  However, the general gist is this method is more resource intensive and slower compared to the `Headers First` approach.
+The blocks first IBD was the first method used by clients to syncronise to the network; this method will attempt to sequentially download all blocks starting from the previous state (e.g. if its a new node, then last stored block would be 0/Empty) [^1].  This approach is more simplistic than its `Headers First` counterpart there are actually more scenarios that could negatively impact the node becoming operational.  These will be discussed in more detail in the next [P2P Attack section](./P2P_Attack.md).  However, the general gist is this method is more resource intensive and slower compared to the `Headers First` approach.
 
 The flowchart below illustrates the blocks first IBD process [^1]:
 
 ![IBD Blocks First Flowchart](images/ibd.blocks.first.flowchart.svg)
 
 
-### ###Broadcasting Blocks
+### Broadcasting Information
+Once a new event (such as a block or transaction) occurs, it must be shared with the network as a whole.  P2P networks achieve this through broadcasting information unsolicited throughout the network where the protocol will have a defined workflow or set of responses for each message (in technical speak, a protocol state machine [^6]).
+
+This state machine is in essence a set of rules that govern how information/messages are distributed throughout the network [^2].  The set of rules (state machine) and the structure of information (e.g. protocol messages) varies between different chains (as discussed at the start of functions section). 
+
+These rules, while they differ between chains. They all have the same purpose of `Ensuring all messages reach all nodes within a certain time period` and can even govern the order and time delay of such messages [^2].  Everything is built on-top of this protocol layer, given that its unsolicited and unauthenticated; presents an opportunity to identify not only vulnerabilities but also new and exciting ways in which the protocol can be protected (maybe a protocol IDS?).
 
 
 ### ###Broadcasting Transactions/Mempool
@@ -95,3 +116,9 @@ The flowchart below illustrates the blocks first IBD process [^1]:
   https://geth.ethereum.org/docs/interface/les
 [^5]: What Is Blockchain Sharding?
   https://101blockchains.com/what-is-blockchain-sharding/
+[^6]: UML Protocol State Machine Diagrams
+  https://www.uml-diagrams.org/protocol-state-machine-diagrams.html
+[^8]: Ethereum: The RLPx Transport Protocol
+  https://github.com/ethereum/devp2p/blob/master/rlpx.md
+[^9]: Reverse Engineering Network Protocols
+  https://jhalon.github.io/reverse-engineering-protocols/
