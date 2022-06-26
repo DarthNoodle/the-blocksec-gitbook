@@ -20,7 +20,7 @@ In Distributed networks all peers/nodes are treated equally; this means they act
 All peers (lets ignore light clients for a moment) on the network will have a copy of data, this means the network is extremely resilient to fault tolerant events that may occur (e.g. such as a DOS attack).
 
 ## Purpose
-The most important part of a P2P network is the communication between nodes.  Blockchain data is considered secure because every node (ignoring light clients & sharding for now) on the network should have a copy of data; nodes would have a constant need to communicate with each other in order to keep data/events (such as blocks or new transactions) synchronised across the network.  As such, the distributed network described above seems like the most logical choice [^1].
+The most important part of a P2P network is the communication between nodes.  Blockchain data is considered secure because every node (ignoring light clients [^4] & sharding [^5] for now) on the network should have a copy of data; nodes would have a constant need to communicate with each other in order to keep data/events (such as blocks or new transactions) synchronised across the network.  As such, the distributed network described above seems like the most logical choice [^1].
 
 P2P protocols should also ensure not only the availability of on-chain data but also the availability of nodes on the network.  This means a connecting client should be able to obtain enough information about the network; it can do so by querying only a small number of online nodes [^2].
 
@@ -62,20 +62,19 @@ In order for the node to verify unconfirmed transactions they require a full cop
 #### Headers First
 Headers first is the newer and primary method of the two IBD options, since the introduction of `Bitcoin Core v0.10.0`;  the primary goal of this method is to permit fast syncronisation between nodes.
 
-This is achieved by only downloading block headers instead of full blocks, as each header is downloaded, limited validation processes are performed to ensure the header integrity before moving onto the next block header.  Once all headers have been downloaded the node will then start to request full blocks from the network [^1].  The flowchart below illustrates this process:
+This is achieved by only downloading block headers instead of full blocks, as each header is downloaded, limited validation processes are performed to ensure the header integrity before moving onto the next block header.  Once all headers have been downloaded the node will then start to request full blocks from the network [^1].  
+
+The flowchart below illustrates this process [^1]:
 
 ![IBD Headers First Flowchart](images/ibd.headers.first.flowchart.svg)
-<p align="center">
-*Source: [^1]*
-</p>
 
 
 #### Blocks First
+The blocks first IBD was the first method used by clients to syncronise to the network; this method will attempt to sequentially download all blocks starting from the previous state (e.g. if its a new node, then last stored block would be 0/Empty).  This approach is more simplistic than its `Headers First` counterpart there are actually more scenarios that could negatively impact the node becoming operational.  These will be discussed in more detail in the next [P2P Attack section](./P2P_Attack.md).  However, the general gist is this method is more resource intensive and slower compared to the `Headers First` approach.
+
+The flowchart below illustrates the blocks first IBD process [^1]:
 
 ![IBD Blocks First Flowchart](images/ibd.blocks.first.flowchart.svg)
-<p align="center">
-*Source: [^1]*
-</p>
 
 
 ### ###Broadcasting Blocks
@@ -92,3 +91,7 @@ This is achieved by only downloading block headers instead of full blocks, as ea
   https://academy.horizen.io/technology/advanced/a-peer-to-peer-p2p-network/
 [^3]: Bitcoin: Protocol Documentation
   https://en.bitcoin.it/wiki/Protocol_documentation
+[^4]: Ethereum: Light client
+  https://geth.ethereum.org/docs/interface/les
+[^5]: What Is Blockchain Sharding?
+  https://101blockchains.com/what-is-blockchain-sharding/
