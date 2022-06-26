@@ -64,7 +64,7 @@ Headers first is the newer and primary method of the two IBD options, since the 
 
 This is achieved by only downloading block headers instead of full blocks, as each header is downloaded, limited validation processes are performed to ensure the header integrity before moving onto the next block header.  Once all headers have been downloaded the node will then start to request full blocks from the network [^1].  The flowchart below illustrates this process:
 
-![IBM Headers First Flowchart](images/ibd.headers.first.flowchart.svg)
+![IBD Headers First Flowchart](images/ibd.headers.first.flowchart.svg)
 <p align="center">
 *Source: [^1]*
 </p>
@@ -72,7 +72,7 @@ This is achieved by only downloading block headers instead of full blocks, as ea
 
 #### Blocks First
 
-![IBM Headers First Flowchart](images/ibd.blocks.first.flowchart.svg)
+![IBD Blocks First Flowchart](images/ibd.blocks.first.flowchart.svg)
 <p align="center">
 *Source: [^1]*
 </p>
