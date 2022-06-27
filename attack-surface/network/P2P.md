@@ -101,7 +101,33 @@ This state machine is in essence a set of rules that govern how information/mess
 These rules, while they differ between chains. They all have the same purpose of `Ensuring all messages reach all nodes within a certain time period` and can even govern the order and time delay of such messages [^2].  Everything is built on-top of this protocol layer, given that its unsolicited and unauthenticated; presents an opportunity to identify not only vulnerabilities but also new and exciting ways in which the protocol can be protected (maybe a protocol IDS?).
 
 
-### ###Broadcasting Transactions/Mempool
+### Broadcasting Transactions/Memory Pool
+It could be argued that this also comes under `Broadcasting Information` however i am giving its own section due to the importance of this piece of functionality.  The network as a whole will maintain a list of transactions to be included onto blocks within the chain.  Once added, they are then removed from the (mempool) list.  Think of this mempool (Memory Pool) as a train station, random people queue for a regular periodic train, once a train stops, people board the carriages and the cycle continues[^11].
+
+This list is in a constant state of flux and as such is generally stored in memory (non-persistent storage) as a low latency approach. However, the cost, is a requirement to have complete knowledge of the chain;  Without knowledge of the previous states, it would not be possible to determine whether the transactions are valid.
+
+Chain sizes can also be of a considerable size. Bitcoin for example, currently (June 2022) has a ledger size of 400+ GB [^10].  That could be a problem if you want to run a node on your mobile phone, do you have enough space, ram, cpu?
+
+#### Simple Payment Verification (SPV)
+Enter Simple Payment Verification (SPV) as a possible solution, how may you ask? 
+
+To create a transaction, only requires your private key.  You could even store this transaction in an email or text file (it is signed so you wont be able to modify the transaction).  This transaction data could then be broadcast to the network at a different location, this would require you to run a node or rely on a third party to provide the services.  
+
+SPV clients are able to verify whether a transaction has been added to the blockchain by inspecting values such as the merkel root hashes in the block headers.  This means they either require a local copy of the chain headers or will have to rely on a third party providing the services.
+
+I would argue web3 (json-rpc) has become the natural extension of the original SPV concept (will discuss more in next chapter).
+
+Hopefully some of the above made you pause, yes its possible to use the chain ecosystem without running a full node.  There, are, however.. risks! 
+
+On to the attack section!
+
+
+
+
+
+https://medium.com/@jonaldfyookball/why-every-bitcoin-user-should-understand-spv-security-520d1d45e0b9
+
+
 
 
 
@@ -122,3 +148,7 @@ These rules, while they differ between chains. They all have the same purpose of
   https://github.com/ethereum/devp2p/blob/master/rlpx.md
 [^9]: Reverse Engineering Network Protocols
   https://jhalon.github.io/reverse-engineering-protocols/
+[^10]: Bitcoin Blockchain Size
+  https://ycharts.com/indicators/bitcoin_blockchain_size
+[^11]: Mastering the Mempool: Your Intro to In-Flight Transactions
+  https://www.blocknative.com/blog/mempool-intro
