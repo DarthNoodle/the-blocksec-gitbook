@@ -113,23 +113,13 @@ Enter Simple Payment Verification (SPV) as a possible solution, how may you ask?
 
 To create a transaction, only requires your private key.  You could even store this transaction in an email or text file (it is signed so you wont be able to modify the transaction).  This transaction data could then be broadcast to the network at a different location, this would require you to run a node or rely on a third party to provide the services.  
 
-SPV clients are able to verify whether a transaction has been added to the blockchain by inspecting values such as the merkel root hashes in the block headers.  This means they either require a local copy of the chain headers or will have to rely on a third party providing the services.
+SPV clients are able to verify whether a transaction has been added to the blockchain by inspecting values such as the merkel root hashes in the block headers.  This means they either require a local copy of the chain headers or will have to rely on a third party providing the services. Here be dragons [^12].
 
 I would argue web3 (json-rpc) has become the natural extension of the original SPV concept (will discuss more in next chapter).
 
 Hopefully some of the above made you pause, yes its possible to use the chain ecosystem without running a full node.  There, are, however.. risks! 
 
 On to the attack section!
-
-
-
-
-
-https://medium.com/@jonaldfyookball/why-every-bitcoin-user-should-understand-spv-security-520d1d45e0b9
-
-
-
-
 
 
 [^1]: Bitcoin Developer: P2P Network
@@ -152,3 +142,5 @@ https://medium.com/@jonaldfyookball/why-every-bitcoin-user-should-understand-spv
   https://ycharts.com/indicators/bitcoin_blockchain_size
 [^11]: Mastering the Mempool: Your Intro to In-Flight Transactions
   https://www.blocknative.com/blog/mempool-intro
+[^12]: Why Every Bitcoin User Should Understand “SPV Security”
+  https://medium.com/@jonaldfyookball/why-every-bitcoin-user-should-understand-spv-security-520d1d45e0b9
