@@ -53,7 +53,7 @@ Should there still be gaps after exhausting the above methods then it may be pos
 ### Connecting To Peers (Peer Discovery)
 Connecting to peers is one of the most critical aspects of a P2P network;  if your a newly created node, how does that node know where to connect and how to obtain information?
 
-In most instances a node will first attempt to utilise [DNS seed nodes](DNS.md) where a pre-defined list of domains/hosts will be queried.  In a similar fashion, a list of static IP addresses are hardcoded into the node and can also be used should the host system not have functioning DNS.
+In most instances a node will first attempt to utilise [DNS seed nodes](DNS.md) where a pre-defined list of domains/hosts will be queried.  In a similar fashion, a list of static IP addresses can be hardcoded into the node, and can also be used should the host system not have functioning DNS.
 
 It would also be possible to manually specify IP addresses within the node configuration file; this would permit the node to only talk to trusted nodes [^2].
 
@@ -104,16 +104,16 @@ These rules, while they differ between chains. They all have the same purpose of
 ### Broadcasting Transactions/Memory Pool
 It could be argued that this also comes under `Broadcasting Information` however i am giving its own section due to the importance of this piece of functionality.  The network as a whole will maintain a list of transactions to be included onto blocks within the chain.  Once added, they are then removed from the (mempool) list.  Think of this mempool (Memory Pool) as a train station, random people queue for a regular periodic train, once a train stops, people board the carriages and the cycle continues[^11].
 
-This list is in a constant state of flux and as such is generally stored in memory (non-persistent storage) as a low latency approach. However, the cost, is a requirement to have complete knowledge of the chain;  Without knowledge of the previous states, it would not be possible to determine whether the transactions are valid.
+This list is in a constant state of flux and as such is generally stored in memory (non-persistent storage) as a low latency approach. However, the cost, is a requirement to have complete knowledge of the chain;  Without knowledge of the previous states, it would not be possible to determine whether the transactions are valid (e.g. a consensus rule where a node is required to validate a transaction upon receiving and before adding to the mempool list).
 
 Chain sizes can also be of a considerable size. Bitcoin for example, currently (June 2022) has a ledger size of 400+ GB [^10].  That could be a problem if you want to run a node on your mobile phone, do you have enough space, ram, cpu?
 
 #### Simple Payment Verification (SPV)
 Enter Simple Payment Verification (SPV) as a possible solution, how may you ask? 
 
-To create a transaction, only requires your private key.  You could even store this transaction in an email or text file (it is signed so you wont be able to modify the transaction).  This transaction data could then be broadcast to the network at a different location, this would require you to run a node or rely on a third party to provide the services.  
+To create a transaction, this only requires your private key.  You could even store this transaction in an email or text file (it is signed so you wont be able to modify the transaction, however i would still caution and treat the data as sensitive).  This transaction data could then be broadcast to the network at a different location, this would require you to run a node or rely on a third party to provide the services.  
 
-SPV clients are able to verify whether a transaction has been added to the blockchain by inspecting values such as the merkel root hashes in the block headers.  This means they either require a local copy of the chain headers or will have to rely on a third party providing the services. Here be dragons [^12].
+SPV clients are able to verify whether a transaction has been added to the blockchain by inspecting values such as the merkel root hashes in the block headers [^13].  This means they either require a local copy of the chain headers or will have to rely on a third party providing the services. Here be dragons [^12].
 
 I would argue web3 (json-rpc) has become the natural extension of the original SPV concept (will discuss more in next chapter).
 
@@ -144,3 +144,5 @@ On to the attack section!
   https://www.blocknative.com/blog/mempool-intro
 [^12]: Why Every Bitcoin User Should Understand “SPV Security”
   https://medium.com/@jonaldfyookball/why-every-bitcoin-user-should-understand-spv-security-520d1d45e0b9
+[^13]: Merkle Trees and SPV
+  https://craigwright.net/blog/bitcoin-blockchain-tech/merkle-trees-and-spv/
